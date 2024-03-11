@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 cena_mieszkania=120000
 wzrost_ceny=0.05
 oprocentowanie=0.12
-lata=6
+lata=5
 okresy=12
 okres_oszcz=lata*okresy
 oszcz=np.around(npf.pmt(oprocentowanie/12, okres_oszcz, 0, prz_cena),2)*(-1)
@@ -20,7 +20,7 @@ oszczędzanie[0]=oszcz
 while i <okres_oszcz:
     oszczędzanie[i]=oszczędzanie[i-1]*oprocentowanie/12+oszczędzanie[i-1]+oszcz
     i+=1
-print('Cena mieszkania po ',lata-1,'latach: ',round(przyszła_cena[-1],2))
+print('Cena mieszkania po ',lata,'latach: ',round(przyszła_cena[-1],2))
 print('Miesięczna kwota do odłożenia: ',oszcz)
 plt.plot(przyszła_cena,label='wzrost wartości mieszkania')
 plt.plot(oszczędzanie,label='lokata')
